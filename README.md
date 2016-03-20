@@ -14,11 +14,6 @@ sudo apt-get install tightvncserver
 sudo nano /etc/network/interfaces
 ```
 
-#### Using the gateway address obtained as follows
-```bash
-arp -a
-```
-
 #### Append the following into the interfaces file
 ```bash
 auto usb0
@@ -27,7 +22,6 @@ iface usb0 inet static
 address 192.168.42.144
 netmask 255.255.255.0
 network 192.168.42.0
-#gateway 192.168.1.254
 broadcast 192.168.42.255
 ```
 
@@ -73,13 +67,13 @@ Unfortunately you need to root the device and install Cyanogenmod in order to li
 # How to install Cyanogenmod on the nexus 7 2012
 Install the latest SDK for Android
 
-Follow the (instructions)[https://wiki.cyanogenmod.org/w/Install_CM_for_grouper] _very_ closely.
+Follow the [instructions](https://wiki.cyanogenmod.org/w/Install_CM_for_grouper) _very_ closely.
 Even with these instructions it took a few hours to figure out the exact images I should be installing.
 For the nexus 7 I used the following;
 
-- CM core image - (cm-12.1-20151117-SNAPSHOT-YOG7DAO1KA-grouper.zip)[https://download.cyanogenmod.org/get/jenkins/135177/cm-12.1-20151117-SNAPSHOT-YOG7DAO1KA-grouper.zip] 
-- Recovery image - (twrp-2.8.7.0-grouper.img)[https://dl.twrp.me/grouper/twrp-2.8.7.0-grouper.img]
-- Google apps - (gapps-lp-20150222-signed.zip)[http://www.idadtech.com/download-gapps-on-cyanogenmod-12-cm12-lollipop-5-x]
+- CM core image - [cm-12.1-20151117-SNAPSHOT-YOG7DAO1KA-grouper.zip](https://download.cyanogenmod.org/get/jenkins/135177/cm-12.1-20151117-SNAPSHOT-YOG7DAO1KA-grouper.zip)
+- Recovery image - [twrp-2.8.7.0-grouper.img](https://dl.twrp.me/grouper/twrp-2.8.7.0-grouper.img)
+- Google apps - [gapps-lp-20150222-signed.zip](http://www.idadtech.com/download-gapps-on-cyanogenmod-12-cm12-lollipop-5-x)
 
 These can all be found from the CM page above.
 
