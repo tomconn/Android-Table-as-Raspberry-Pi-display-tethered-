@@ -3,23 +3,24 @@
 # Raspberry Pi
 ## Configure networking via the USB cable
 
-### Install (tightvncserver)[http://www.tightvnc.com/] or equivalent and install as follows;
-'''bash
+### Install [tightvncserver](http://www.tightvnc.com/) or equivalent and install as follows;
+
+```bash
 sudo apt-get install tightvncserver
-'''
+```
 
 ### Edit the interfaces file adding a USB connect (for teathering)
-'''bash
+```bash
 sudo nano /etc/network/interfaces
-'''
+```
 
 #### Using the gateway address obtained as follows
-'''bash
+```bash
 arp -a
-'''
+```
 
 #### Append the following into the interfaces file
-'''bash
+```bash
 auto usb0
 allow-hotplug usb0
 iface usb0 inet static
@@ -28,22 +29,22 @@ netmask 255.255.255.0
 network 192.168.42.0
 #gateway 192.168.1.254
 broadcast 192.168.42.255
-'''
+```
 
 ### Restart the network
-'''bash
+```bash
 sudo  /etc/init.d/networking restart
-'''
+```
 
 ### Ensure tightvnc starts automatically on power on
 
 #### Create a new service to start tightvncserver (using systemd is earlier systemv then exercise up to reader)
-'''bash
+```bash
 sudo nano /etc/systemd/system/tightvncserver.service
-'''
+```
 
 #### add the following;
-'''bash
+```bash
 [Unit]
 Description=TightVNC remote desktop server
 After=sshd.service
@@ -56,14 +57,14 @@ Type=forking
  
 [Install]
 WantedBy=multi-user.target
-'''
+```
 
 #### Set ownership, executable and enable
-'''bash
+```bash
 sudo chown root:root /etc/systemd/system/tightvncserver.service
 sudo chmod 755 /etc/systemd/system/tightvncserver.service
 sudo systemctl enable tightvncserver.service
-'''
+```
 
 # Android Tablet
 If your nexus 7 2012 is a wifi only version then you cannot access the tethering options from the stock install.
