@@ -1,15 +1,20 @@
 # Android-Table-as-Raspberry-Pi-display-tethered
 
+# Setup
+- Raspberry Pi B 3 (running Jessie)
+- Nexus 7 2012 (_will require rooting if wifi only_)
+- Bluetooth wireless keyboard
+
 # Raspberry Pi
 ## Configure networking via the USB cable
 
-### Install [tightvncserver](http://www.tightvnc.com/) or equivalent and install as follows;
+### Install [tightvncserver](http://www.tightvnc.com/) or equivalent. Install as follows;
 
 ```bash
 sudo apt-get install tightvncserver
 ```
 
-### Edit the interfaces file adding a USB connect (for teathering)
+### Edit the interfaces file adding a USB connect (for tethering)
 ```bash
 sudo nano /etc/network/interfaces
 ```
